@@ -25,21 +25,7 @@ public class Video extends ElementoMultimediale implements PlayAndVol, Luminosit
         this.luminosita=luminosita;
     }
 
-    public int getVolume() {
-        return volume;
-    }
 
-    public void setVolume(int volume) {
-        this.volume = volume;
-    }
-
-    public int getDurata() {
-        return durata;
-    }
-
-    public void setDurata(int durata) {
-        this.durata = durata;
-    }
 
 
     @Override

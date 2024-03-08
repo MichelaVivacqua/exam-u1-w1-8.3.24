@@ -12,21 +12,7 @@ public class Audio extends ElementoMultimediale implements PlayAndVol {
         this.durata = durata;
     }
 
-    public int getVolume() {
-        return volume;
-    }
 
-    public void setVolume(int volume) {
-        this.volume = volume;
-    }
-
-    public int getDurata() {
-        return durata;
-    }
-
-    public void setDurata(int durata) {
-        this.durata = durata;
-    }
 
 
     @Override

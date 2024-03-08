@@ -105,11 +105,13 @@ public class Main {
             input = scanner.nextLine();
 
             switch (input) {
+
+                case "1":
 //              CAST ESPLICITO PER CONVERTIRE L'ELEMENTO DI TIPO ELEMENTOMULTIMEDIALE
 //              (NECESSARIO A CREARE UN ARRAY UNICO SFRUTTANDO IL POLIMORFISMO)
 //              IN UN ELEMENTO DI TIPO AUDIO
 //              (LA CORRETTA SOTTOCLASSE) E POTER QUINDI USARE IL SUO METODO PLAY
-                case "1":
+
                     ((Audio) mediaArray[0]).play();
                     System.out.println("Premi 1+ se vuoi alzare il volume, o 1- per abbassarlo");
                     break;

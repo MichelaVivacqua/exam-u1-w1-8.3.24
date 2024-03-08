@@ -8,6 +8,16 @@ public class Video extends ElementoMultimediale implements PlayAndVol, Luminosit
     private int durata;
     private int luminosita;
 
+    @Override
+    public String toString() {
+        return "Video{" +
+                "volume=" + volume +
+                ", durata=" + durata +
+                ", luminosita=" + luminosita +
+                ", titolo='" + titolo + '\'' +
+                '}';
+    }
+
     public Video(String titolo, int volume, int durata, int luminosita) {
         super(titolo);
         this.volume = volume;

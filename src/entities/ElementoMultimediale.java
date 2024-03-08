@@ -7,6 +7,13 @@ public abstract class ElementoMultimediale {
         return titolo;
     }
 
+    @Override
+    public String toString() {
+        return "ElementoMultimediale{" +
+                "titolo='" + titolo + '\'' +
+                '}';
+    }
+
     public void setTitolo(String titolo) {
         this.titolo = titolo;
     }

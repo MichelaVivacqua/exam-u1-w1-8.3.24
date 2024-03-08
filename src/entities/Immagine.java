@@ -24,6 +24,14 @@ public class Immagine extends ElementoMultimediale implements Luminosita {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Immagine{" +
+                "luminosita=" + luminosita +
+                ", titolo='" + titolo + '\'' +
+                '}';
+    }
+
     public void show() {
         String titoloConLum = getTitolo();
         for (int i = 0; i < luminosita; i++) {

@@ -45,6 +45,15 @@ public class Audio extends ElementoMultimediale implements PlayAndVol {
 
 
     @Override
+    public String toString() {
+        return "Audio{" +
+                "volume=" + volume +
+                ", durata=" + durata +
+                ", titolo='" + titolo + '\'' +
+                '}';
+    }
+
+    @Override
     public void play() {
         String titoloConVolume = getTitolo();
         for (int i = 0; i < volume; i++) {

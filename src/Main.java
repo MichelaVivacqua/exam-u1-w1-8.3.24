@@ -1,7 +1,11 @@
+import entities.Audio;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.printf("Ciao Mondo!");
 
 
+        Audio nonDirgliMai = new Audio("Non dirgli mai", 5, 3);
+
+nonDirgliMai.play();
     }
 }

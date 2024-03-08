@@ -38,6 +38,6 @@ public class Immagine extends ElementoMultimediale implements Luminosita {
             titoloConLum += "*";
 
         }
-        System.out.println("Visualizzando: " + titoloConLum);
+        System.out.println(titoloConLum);
     }
 }

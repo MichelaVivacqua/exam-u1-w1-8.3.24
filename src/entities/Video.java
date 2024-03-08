@@ -67,7 +67,7 @@ public class Video extends ElementoMultimediale implements PlayAndVol, Luminosit
             titoloConVolumeLuminosita += "*";
         }
         for (int i = 0; i < durata; i++) {
-            System.out.println("Playing: " + titoloConVolumeLuminosita);
+            System.out.println( titoloConVolumeLuminosita);
         }
     }
 

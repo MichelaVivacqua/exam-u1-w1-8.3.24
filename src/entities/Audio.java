@@ -60,7 +60,7 @@ public class Audio extends ElementoMultimediale implements PlayAndVol {
             titoloConVolume += "!";
         }
         for (int i = 0; i < durata; i++) {
-            System.out.println("Riproducendo: " + titoloConVolume);
+            System.out.println(titoloConVolume);
         }
     }
 

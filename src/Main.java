@@ -80,7 +80,7 @@ public class Main {
             mediaArray[i] = new Video(titolo, volume, durata, luminosita);
         }
 
-      //  creo gli ultimi due elementi dell'array che saranno due immagini
+      //  Creo gli ultimi due elementi dell'array che saranno due immagini
         for (int i = 3; i < 5; i++) {
             System.out.println("Inserisci il titolo dell'immagine : " );
             String titolo = scanner.nextLine();
@@ -90,11 +90,35 @@ public class Main {
         }
 
 
+//        Test per il corretto funzionamento della creazione dell'array con i valori letti da tastiera
+//        System.out.println("Media inseriti:");
+//        for (ElementoMultimediale media : mediaArray) {
+//            System.out.println(media);
+//        }
 
-        System.out.println("Media inseriti:");
-        for (ElementoMultimediale media : mediaArray) {
-            System.out.println(media);
-        }
+
+
+        int input;
+        do {
+            System.out.println("Premi 1 per riprodurre l'audio caricato, 2 per riprodurre il primo video caricato, 3 per riprodurre il secondo video caricato, 4 per mostrare la prima foto caricata, e 5 mostare la seconda foto caricata. O premi 0 per uscire");
+
+            input = scanner.nextInt();
+
+            switch (input) {
+//              CAST ESPLICITO PER CONVERTIRE L'ELEMENTO DI TIPO ELEMENTOMULTIMEDIALE
+//              (NECESSARIO A CREARE UN ARRAY UNICO SFRUTTANDO IL POLIMORFISMO)
+//              IN UN ELEMENTO DI TIPO AUDIO
+//              (LA CORRETTA SOTTOCLASSE) E POTER QUINDI USARE IL SUO METODO PLAY
+                case 1: ((Audio) mediaArray[0]).play(); break;
+                case 2: ((Video) mediaArray[1]).play(); break;
+                case 3: ((Video) mediaArray[2]).play(); break;
+                case 4: ((Immagine) mediaArray[3]).show(); break;
+                case 5: ((Immagine) mediaArray[4]).show(); break;
+                default:
+                    System.out.println("Puoi selezionare un numero da 1 a 5 per il controllo dei tuoi file o 0 per uscire");
+            }
+        } while (input != 0);
+
 
         scanner.close();
     }

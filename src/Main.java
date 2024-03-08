@@ -69,20 +69,20 @@ public class Main {
 
         // Creo il secondo e terzo elemento dell'array, che saranno 2 video
         for (int i = 1; i < 3; i++) {
-            System.out.println("Inserisci il titolo del video: " );
+            System.out.println("Inserisci il titolo del video: ");
             String titolo = scanner.nextLine();
             System.out.println("Inserisci la durata del video: ");
             int durata = Integer.parseInt(scanner.nextLine());
-            System.out.println("Inserisci la luminosita del video: " );
+            System.out.println("Inserisci la luminosita del video: ");
             int luminosita = Integer.parseInt(scanner.nextLine());
-            System.out.println("Inserisci il volume del video: " );
+            System.out.println("Inserisci il volume del video: ");
             int volume = Integer.parseInt(scanner.nextLine());
             mediaArray[i] = new Video(titolo, volume, durata, luminosita);
         }
 
-      //  Creo gli ultimi due elementi dell'array che saranno due immagini
+        //  Creo gli ultimi due elementi dell'array che saranno due immagini
         for (int i = 3; i < 5; i++) {
-            System.out.println("Inserisci il titolo dell'immagine : " );
+            System.out.println("Inserisci il titolo dell'immagine : ");
             String titolo = scanner.nextLine();
             System.out.println("Inserisci la luminosita dell'immagine: ");
             int luminosita = Integer.parseInt(scanner.nextLine());
@@ -95,29 +95,92 @@ public class Main {
 //        for (ElementoMultimediale media : mediaArray) {
 //            System.out.println(media);
 //        }
+//    }}
 
 
-
-        int input;
+        String input;
         do {
             System.out.println("Premi 1 per riprodurre l'audio caricato, 2 per riprodurre il primo video caricato, 3 per riprodurre il secondo video caricato, 4 per mostrare la prima foto caricata, e 5 mostare la seconda foto caricata. O premi 0 per uscire");
 
-            input = scanner.nextInt();
+            input = scanner.nextLine();
 
             switch (input) {
 //              CAST ESPLICITO PER CONVERTIRE L'ELEMENTO DI TIPO ELEMENTOMULTIMEDIALE
 //              (NECESSARIO A CREARE UN ARRAY UNICO SFRUTTANDO IL POLIMORFISMO)
 //              IN UN ELEMENTO DI TIPO AUDIO
 //              (LA CORRETTA SOTTOCLASSE) E POTER QUINDI USARE IL SUO METODO PLAY
-                case 1: ((Audio) mediaArray[0]).play(); break;
-                case 2: ((Video) mediaArray[1]).play(); break;
-                case 3: ((Video) mediaArray[2]).play(); break;
-                case 4: ((Immagine) mediaArray[3]).show(); break;
-                case 5: ((Immagine) mediaArray[4]).show(); break;
+                case "1":
+                    ((Audio) mediaArray[0]).play();
+                    System.out.println("Premi 1+ se vuoi alzare il volume, o 1- per abbassarlo");
+                    break;
+                case "1+":
+                    ((Audio) mediaArray[0]).alzaVolume();
+                    ((Audio) mediaArray[0]).play();
+                    break;
+                case "1-":
+                    ((Audio) mediaArray[0]).abbassaVolume();
+                    ((Audio) mediaArray[0]).play();
+                    break;
+                case "2": ((Video) mediaArray[1]).play();
+                    System.out.println("Premi 2+ se vuoi alzare il volume, o 2- per abbassarlo; 2l+ se vuoi aumentare la luminosità e 2l- per abbassarla");break;
+                case "2+":
+                    ((Video) mediaArray[1]).alzaVolume();
+                    ((Video) mediaArray[1]).play();
+                    break;
+                case "2-":
+                    ((Video) mediaArray[1]).abbassaVolume();
+                    ((Video) mediaArray[1]).play();
+                    break;
+                case "2l+":
+                    ((Video)mediaArray[1]).aumentaLuminosita();
+                    ((Video) mediaArray[1]).play();
+                    break;
+                case "2l-":
+                    ((Video)mediaArray[1]).diminuisciLuminosita();
+                    ((Video) mediaArray[1]).play();
+                    break;
+                case "3": ((Video) mediaArray[2]).play();
+                    System.out.println("Premi 3+ se vuoi alzare il volume, o 3- per abbassarlo; 3l+ se vuoi aumentare la luminosità e 3l- per abbassarla");break;
+                case "3+":
+                    ((Video) mediaArray[2]).alzaVolume();
+                    ((Video) mediaArray[2]).play();
+                    break;
+                case "3-":
+                    ((Video) mediaArray[2]).abbassaVolume();
+                    ((Video) mediaArray[2]).play();
+                    break;
+                case "3l+":
+                    ((Video)mediaArray[2]).aumentaLuminosita();
+                    ((Video) mediaArray[2]).play();
+                    break;
+                case "3l-":
+                    ((Video)mediaArray[2]).diminuisciLuminosita();
+                    ((Video) mediaArray[2]).play();
+                    break;
+                case "4": ((Immagine) mediaArray[3]).show();
+                    System.out.println("Premi 4l+ se vuoi aumentare la luminosità e 4l- per abbassarla");break;
+                case "4l+":
+                    ((Immagine)mediaArray[3]).aumentaLuminosita();
+                    ((Immagine) mediaArray[3]).show();
+                    break;
+                case "4l-":
+                    ((Immagine)mediaArray[3]).diminuisciLuminosita();
+                    ((Immagine) mediaArray[3]).show();
+                    break;
+                case "5": ((Immagine) mediaArray[4]).show();
+                    System.out.println("Premi 5l+ se vuoi aumentare la luminosità e 5l- per abbassarla");break;
+                case "5l+":
+                    ((Immagine)mediaArray[4]).aumentaLuminosita();
+                    ((Immagine) mediaArray[4]).show();
+                    break;
+                case "5l-":
+                    ((Immagine)mediaArray[4]).diminuisciLuminosita();
+                    ((Immagine) mediaArray[4]).show();
+                    break;
                 default:
                     System.out.println("Puoi selezionare un numero da 1 a 5 per il controllo dei tuoi file o 0 per uscire");
             }
-        } while (input != 0);
+        } while (!input.equals("0"));
 
 
         scanner.close();

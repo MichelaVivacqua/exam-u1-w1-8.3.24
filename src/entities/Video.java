@@ -1,8 +1,9 @@
 package entities;
 
+import interfaces.Luminosita;
 import interfaces.PlayAndVol;
 
-public class Video extends ElementoMultimediale implements PlayAndVol {
+public class Video extends ElementoMultimediale implements PlayAndVol, Luminosita {
     private int volume;
     private int durata;
     private int luminosita;
@@ -60,6 +61,7 @@ public class Video extends ElementoMultimediale implements PlayAndVol {
         }
     }
 
+    @Override
     public void diminuisciLuminosita() {
         if (luminosita > 0) {
            luminosita--;
@@ -67,6 +69,7 @@ public class Video extends ElementoMultimediale implements PlayAndVol {
     }
 
 
+    @Override
     public void aumentaLuminosita() {
         if (luminosita < 10) {
             luminosita++;

@@ -1,4 +1,5 @@
 import entities.Audio;
+import entities.Immagine;
 import entities.Video;
 
 public class Main {
@@ -35,5 +36,16 @@ nonDirgliMai.play();
         System.out.println("---------------");
         spotPubblicitario.aumentaLuminosita();
         spotPubblicitario.play();
+
+        Immagine fotomia = new Immagine("La mia foto",5);
+        fotomia.show();
+        System.out.println("---------------");
+        fotomia.aumentaLuminosita();
+        fotomia.aumentaLuminosita();
+        fotomia.show();
+        System.out.println("---------------");
+        fotomia.diminuisciLuminosita();
+        fotomia.show();
     }
+
 }
